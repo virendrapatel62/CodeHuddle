@@ -8,7 +8,6 @@ import createVoteCollection from "./vote.collection";
 export default async function getOrCreateDB() {
   try {
     await databases.get(db);
-    console.log("Database connection");
   } catch (error) {
     try {
       await databases.create(db, db);
@@ -26,6 +25,7 @@ export default async function getOrCreateDB() {
       console.log("Database connected");
     } catch (error) {
       console.log("Error creating databases or collections");
+      console.log(error);
     }
 
     return databases;
