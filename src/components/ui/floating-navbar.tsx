@@ -8,6 +8,7 @@ import {
 } from "framer-motion";
 import Link from "next/link";
 import React, { useState } from "react";
+import { BorderBeam } from "../magicui/border-beam";
 
 export interface IItem {
   name: string;

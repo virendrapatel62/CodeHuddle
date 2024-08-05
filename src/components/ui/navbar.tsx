@@ -3,6 +3,7 @@ import { useAuthStore } from "@/store/auth";
 import { IconHome, IconLogout, IconUser } from "@tabler/icons-react";
 import { useRouter } from "next/navigation";
 import { FloatingNav, IItem } from "../ui/floating-navbar";
+import { BorderBeam } from "../magicui/border-beam";
 
 export default function Navbar() {
   const { session, logout } = useAuthStore();
