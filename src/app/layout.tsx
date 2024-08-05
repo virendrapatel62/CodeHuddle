@@ -1,3 +1,7 @@
+import Navbar from "@/components/ui/navbar";
+import { ShootingStars } from "@/components/ui/shooting-stars/shooting-star";
+import { StarsBackground } from "@/components/ui/shooting-stars/star-backgroud";
+import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -16,7 +20,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={cn(inter.className, "bg-neutral-950 text-neutral-300 dark")}
+      >
+        <div>
+          <ShootingStars starHeight={1} />
+          <ShootingStars starHeight={1} />
+          <StarsBackground starDensity={0.0006} />
+        </div>
+
+        <Navbar />
+
+        <main className="relative my-[100px]">
+          <div className="container">{children}</div>
+        </main>
+      </body>
     </html>
   );
 }

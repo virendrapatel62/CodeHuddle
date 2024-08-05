@@ -17,8 +17,8 @@ const AuthLayout = ({ children }: { children: React.ReactNode }) => {
   if (session) return null;
 
   return (
-    <div className="">
-      <div className="">{children}</div>
+    <div className="mt-8">
+      <div className="container">{children}</div>
     </div>
   );
 };
