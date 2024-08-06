@@ -20,6 +20,7 @@ export const cloudProps: Omit<ICloud, "children"> = {
       paddingTop: 40,
     },
   },
+
   options: {
     reverse: true,
     depth: 1,
@@ -52,7 +53,9 @@ export const renderCustomIcon = (icon: SimpleIcon, theme: string) => {
       href: undefined,
       target: undefined,
       rel: undefined,
-      onClick: (e: any) => e.preventDefault(),
+      onClick: (e: any) => {
+        e.preventDefault();
+      },
     },
   });
 };
