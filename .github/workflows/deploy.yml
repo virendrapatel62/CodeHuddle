@@ -1,0 +1,33 @@
+name: Deploy CodeHuddle App
+
+on:
+  push:
+    branches:
+      - main # Trigger on push to the main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the project
+        run: npm run build
+
+      - name: Deploy to server via SSH
+        uses: appleboy/ssh-action@v0.1.6
+        with:
+          host: ${{ secrets.SERVER_IP }} # Add SERVER_IP as a GitHub secret
+          username: ${{ secrets.SERVER_USER }} # Add SERVER_USER as a GitHub secret
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: bash ./deploy.sh
