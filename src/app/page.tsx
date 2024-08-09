@@ -24,8 +24,6 @@ export default function Home() {
               />
             </h2>
 
-            <h1>Hello Testing the deployment</h1>
-
             <p className="text-lg text-gray-400 mb-6">
               {`Become a part of our vibrant community of developers. Whether
               you're a beginner or an experienced coder, there's always
